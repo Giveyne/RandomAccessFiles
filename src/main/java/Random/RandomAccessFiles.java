@@ -33,11 +33,10 @@ public class RandomAccessFiles {
 
         public static void main(String[] args) throws IOException{
 
-            RandomAccessFiles randomAccessFiles1 = new RandomAccessFiles();
+            RandomAccessFiles randomAccessFiles1 = new RandomAccessFiles(); // Create one Object for read and write
             randomAccessFiles1.readFile();
 
-            RandomAccessFiles randomAccessFiles = new RandomAccessFiles();
-            randomAccessFiles.writeFile("Write me on you file");
+            randomAccessFiles1.writeFile("Write me in you file");
 
 
         }

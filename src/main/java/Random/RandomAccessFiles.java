@@ -7,29 +7,28 @@ import java.lang.*;
 
 public class RandomAccessFiles {
 
-        public void writeFile(){
-            String sb1 = "I love you!";
+        public void writeFile(String string){
             File creatFile = new File ("C:\\test\\save1.txt");
             try(RandomAccessFile file = new RandomAccessFile(creatFile, "rw")){
-                file.write(sb1.getBytes("UTF8"));
+                file.write(string.getBytes("UTF8"));
             }
             catch (IOException e){
                 e.printStackTrace();
             }
         }
         public void readFile(){
-            StringBuilder sb = new StringBuilder();
+            StringBuffer stringBuffer = new StringBuffer();
             try(RandomAccessFile file = new RandomAccessFile("C:\\test\\save.txt", "r")){
                 int b = file.read();
                 while(b != -1){
-                    sb.append((char)b);
+                    stringBuffer.append((char)b);
                     b = file.read();
                 }
             }
             catch (IOException e){
                 e.printStackTrace();
             }
-            System.out.println(sb);
+            System.out.println(stringBuffer);
         }
 
         public static void main(String[] args) throws IOException{
@@ -38,7 +37,7 @@ public class RandomAccessFiles {
             randomAccessFiles1.readFile();
 
             RandomAccessFiles randomAccessFiles = new RandomAccessFiles();
-            randomAccessFiles.writeFile();
+            randomAccessFiles.writeFile("Write me on you file");
 
 
         }

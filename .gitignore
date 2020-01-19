@@ -3,3 +3,4 @@
 *.war
 *.jar
 *.ear
+git remote add origin https://github.com/Giveyne/RandomAccessFiles.git
